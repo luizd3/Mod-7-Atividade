@@ -47,6 +47,10 @@ public abstract class Conta {
 
     public abstract double getSaldo();
 
+    public abstract void depositar(double valorDeposito);
+
+    public abstract void sacar(double valorSaque);
+
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
