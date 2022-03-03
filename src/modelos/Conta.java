@@ -1,32 +1,36 @@
+package modelos;
+
 public abstract class Conta {
-    private int numero;
+    private int numeroConta;
     private int agencia;
     private String banco;
     protected double saldo;
+    private TipoConta tipoConta;
 
-    public Conta(int numero, int agencia, String banco, double saldo) {
-        this.numero = numero;
+    public Conta(int agencia, String banco, double saldo, TipoConta tipoConta) {
         this.agencia = agencia;
         this.banco = banco;
         this.saldo = saldo;
+        this.tipoConta = tipoConta;
     }
 
     @Override
     public String toString() {
-        return "Conta{" +
-                "numero=" + numero +
+        return "contas.Conta{" +
+                "numero=" + numeroConta +
                 ", agencia=" + agencia +
                 ", banco='" + banco + '\'' +
                 ", saldo=" + saldo +
+                ", tipoConta=" + tipoConta +
                 '}';
     }
 
-    public int getNumero() {
-        return numero;
+    public int getNumeroConta() {
+        return numeroConta;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
     public int getAgencia() {
@@ -47,6 +51,10 @@ public abstract class Conta {
 
     public abstract double getSaldo();
 
+    public TipoConta getTipoConta () {
+        return tipoConta;
+    }
+
     public abstract void depositar(double valorDeposito);
 
     public abstract void sacar(double valorSaque);
@@ -54,4 +62,5 @@ public abstract class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
 }
